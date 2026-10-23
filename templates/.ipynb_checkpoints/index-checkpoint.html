@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>食品配料表与健康分析</title>
+  <!-- 引入外部的 CSS 文件 -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🍎 食品配料表与健康分析</h1>
+    <p class="subtitle">上传图片，并结合您的健康状况获取专业建议</p>
+    
+    <div class="upload-area" id="dropArea">
+      <input type="file" id="fileInput" accept="image/*" hidden>
+      <div class="upload-inner" id="uploadInner">
+        <div class="icon">📤</div>
+        <p>点击选择图片，或拖拽到此处</p>
+      </div>
+      <img id="preview" alt="预览">
+    </div>
+
+    <div class="input-group">
+      <label for="userCondition">🩺 您的健康状况 / 饮食要求（选填）：</label>
+      <textarea id="userCondition" placeholder="例如：我对花生过敏，患有高血压，正在减肥..."></textarea>
+    </div>
+
+    <button id="submitBtn" disabled>开始识别与分析</button>
+    
+    <div id="loading" class="loading">
+      <div class="spinner"></div><span>正在深度分析，请稍候（CPU OCR较慢，请耐心等待）...</span>
+    </div>
+    
+    <div id="resultBox" class="result-box">
+      <div class="section">
+        <h3>📋 提取的配料表</h3>
+        <div class="content-box" id="resultText"></div>
+      </div>
+      <div class="section">
+        <h3>💡 专属健康建议</h3>
+        <div class="content-box advice-box" id="adviceText"></div>
+      </div>
+    </div>
+    
+    <div id="errorBox" class="error-box"></div>
+  </div>
+
+  <!-- 引入外部的 JS 文件 -->
+  <script src="/static/script.js"></script>
+</body>
+</html>

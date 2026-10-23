@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+uploads/
+output.md
+*.png
+*.jpg
+*.jpeg
+venv/
+env/
+.DS_Store
